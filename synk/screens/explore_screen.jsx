@@ -179,59 +179,63 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-    },
-    flatlist_style: {
-        marginTop: 80,
+        marginTop: 50,
     },
     remixItem: {
         flexDirection: 'row',
-        marginBottom: 20
+        marginBottom: 10,
+        backgroundColor: '#f9f9f9',
+        padding: 10,
+        borderRadius: 5,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.20,
+        shadowRadius: 1.41,
+        elevation: 2,
     },
     cover: {
         width: 100,
         height: 100,
-        marginRight: 10
+        borderRadius: 5,
     },
     infoContainer: {
         flex: 1,
-        justifyContent: 'center'
+        marginLeft: 10,
     },
     title: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     uploader: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        marginBottom: 5
+        color: 'gray',
     },
     description: {
-        fontSize: 14,
-        marginBottom: 10
+        marginVertical: 5,
     },
     votes: {
-        fontSize: 14,
-        marginTop: 10,
-        marginBottom: 10
+        marginTop: 5,
+        fontWeight: 'bold',
     },
     voteButtons: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 10
+        marginTop: 10,
     },
     loadingContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
+    flatlist_style: { flex: 1 },
     inputText: {
-        fontFamily: 'Roboto',
-        fontSize: 32,
-        padding: 20,
-        marginTop: 20
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 20,
     },
 });
 
 export default RemixListScreen;
-
-

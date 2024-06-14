@@ -117,7 +117,6 @@ function SubmissionScreen({ navigation }) {
                 description,
                 fileUrl,
                 coverUrl: imageUrl,
-                votes: 0,  // Initialize votes count to 0
                 timestamp: new Date(),
                 status: 'pending'
             });
