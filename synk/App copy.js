@@ -16,32 +16,12 @@ import LogIn from './screens/login.jsx';
 import HomeScreen from './screens/home_screen.jsx';
 import SubmissionScreen from './screens/submission_screen.jsx';
 import RemixListScreen from './screens/explore_screen.jsx';
-import GenreScreen from './screens/genre_screeb.jsx';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
 const TabBarIcon = ({ name, color, size = 26 }) => {
   return <Ionicons name={name} size={size} color={color} />;
-};
-
-// Home Stack which includes HomeScreen and GenreScreen
-const HomeStack = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="HomeScreen"
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="GenreScreen"
-        component={GenreScreen}
-        options={{ title: 'Genre' }}
-      />
-    </Stack.Navigator>
-  );
 };
 
 export default function App() {
@@ -76,28 +56,22 @@ export default function App() {
           }}
         >
           <Tab.Screen
-            name="HomeStack"
+            name="HomeScreen"
             options={{
               title: 'Home',
               tabBarIcon: ({ color, focused }) => (
-                <TabBarIcon
-                  name={focused ? 'home' : 'home-outline'}
-                  color={color}
-                />
+                <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
               ),
             }}
-            component={HomeStack}
+            component={HomeScreen}
           />
-          {userType === 'DJ' ? (
+          {userType === "DJ" ? (
             <Tab.Screen
               name="Submit"
               options={{
                 title: 'Submit',
                 tabBarIcon: ({ color, focused }) => (
-                  <TabBarIcon
-                    name={focused ? 'cloud-upload' : 'cloud-upload-outline'}
-                    color={color}
-                  />
+                  <TabBarIcon name={focused ? 'cloud-upload' : 'cloud-upload-outline'} color={color} />
                 ),
               }}
               component={SubmissionScreen}
@@ -108,13 +82,10 @@ export default function App() {
               options={{
                 title: 'Explore',
                 tabBarIcon: ({ color, focused }) => (
-                  <TabBarIcon
-                    name={focused ? 'musical-notes' : 'musical-notes-outline'}
-                    color={color}
-                  />
+                  <TabBarIcon name={focused ? 'musical-notes' : 'musical-notes-outline'} color={color} />
                 ),
               }}
-              component={RemixListScreen}
+                component={RemixListScreen}
             />
           )}
         </Tab.Navigator>
@@ -127,7 +98,7 @@ export default function App() {
               title: 'SIGN UP',
               headerStyle: { backgroundColor: '#000000' },
               headerTintColor: '#fff',
-              headerTitleStyle: { fontWeight: 'bold' },
+              headerTitleStyle: { fontWeight: 'bold' }
             }}
           />
           <Stack.Screen
@@ -137,7 +108,7 @@ export default function App() {
               title: 'LOGIN',
               headerStyle: { backgroundColor: '#000000' },
               headerTintColor: '#fff',
-              headerTitleStyle: { fontWeight: 'bold' },
+              headerTitleStyle: { fontWeight: 'bold' }
             }}
           />
         </Stack.Navigator>

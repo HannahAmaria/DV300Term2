@@ -1,40 +1,37 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { StyleSheet, View, Text, Button, FlatList, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, Button, FlatList, TouchableOpacity } from 'react-native';  // Adjust path according to your project structure
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Link } from 'expo-router';
 import { handleSignOut } from '../services/authService.js';
-import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { useFocusEffect } from '@react-navigation/native';
+import { getFirestore, collection, getDocs, query, distinct, orderBy } from 'firebase/firestore'; // Import Firestore
 
 export default function HomeScreen({ navigation }) {
     const [genres, setGenres] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchGenres = async () => {
-        try {
-            const firestore = getFirestore();
-            const submissionsColRef = collection(firestore, 'submissions');
-            const genresQuery = query(submissionsColRef, orderBy('genre'));
-            const submissionsSnapshot = await getDocs(genresQuery);
+    useEffect(() => {
+        const fetchGenres = async () => {
+            try {
+                const firestore = getFirestore();
+                const submissionsColRef = collection(firestore, 'submissions');
+                const genresQuery = query(submissionsColRef, orderBy('genre'));
+                const submissionsSnapshot = await getDocs(genresQuery);
 
-            const genreSet = new Set();
-            submissionsSnapshot.forEach((doc) => {
-                genreSet.add(doc.data().genre);
-            });
+                const genreSet = new Set();
+                submissionsSnapshot.forEach((doc) => {
+                    genreSet.add(doc.data().genre);
+                });
 
-            setGenres(Array.from(genreSet));
-            setLoading(false);
-        } catch (error) {
-            console.error("Error fetching genres: ", error);
-            setLoading(false);
-        }
-    };
+                setGenres(Array.from(genreSet));
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching genres: ", error);
+                setLoading(false);
+            }
+        };
 
-    useFocusEffect(
-        useCallback(() => {
-            setLoading(true);  // Show loading indicator
-            fetchGenres();
-        }, [])
-    );
+        fetchGenres();
+    }, []);
 
     const handleGenrePress = (genre) => {
         navigation.navigate('GenreScreen', { genre });
@@ -45,9 +42,7 @@ export default function HomeScreen({ navigation }) {
             <View style={styles.titleContainer}>
                 <Text style={styles.header}>SynK</Text>
                 <Button title="Sign Out" color="green" onPress={handleSignOut} />
-                {loading ? (
-                    <Text>Loading genres...</Text>
-                ) : (
+                {loading ? <Text>Loading genres...</Text> :
                     <FlatList
                         data={genres}
                         keyExtractor={(item) => item}
@@ -58,7 +53,7 @@ export default function HomeScreen({ navigation }) {
                         )}
                         style={styles.flatlist_style}
                     />
-                )}
+                }
             </View>
         </SafeAreaView>
     );
@@ -99,3 +94,4 @@ const styles = StyleSheet.create({
         color: 'white',
     },
 });
+

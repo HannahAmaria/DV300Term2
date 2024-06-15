@@ -130,6 +130,7 @@ const RemixListScreen = () => {
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.uploader}>Uploaded by: {item.uploaderName}</Text>
                 <Text style={styles.description}>{item.description}</Text>
+                <Text style={styles.description}>Genre: {item.genre}</Text>
                 <Text style={styles.votes}>Votes: {item.votes || 0}</Text>
                 <View style={styles.voteButtons}>
                     <Button

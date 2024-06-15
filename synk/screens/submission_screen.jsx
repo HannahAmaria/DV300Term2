@@ -9,10 +9,15 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import * as FileSystem from 'expo-file-system';
 
+import ModalSelector from 'react-native-modal-selector'
+
 function SubmissionScreen({ navigation }) {
 
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
+
+    const [genre, setGenre] = useState('');
+
     const [fileUri, setFileUri] = useState(null);
     const [imageUri, setImageUri] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -24,6 +29,7 @@ function SubmissionScreen({ navigation }) {
         useCallback(() => {
             setTitle('');
             setDescription('');
+            setGenre('');
             setFileUri(null);
             setImageUri(null);
             setLoading(false);
@@ -38,6 +44,11 @@ function SubmissionScreen({ navigation }) {
     const handleDescriptionChange = text => {
         setDescription(text);
         console.log("Updated Description: ", text);
+    };
+
+    const handleGenreChange = text => {
+        setGenre(text);
+        console.log("Updated Genre: ", text);
     };
 
     const pickFile = async (audio) => {
@@ -79,10 +90,9 @@ function SubmissionScreen({ navigation }) {
         }
     };
 
-
     const submitEntry = async () => {
-        console.log("Submitting with: ", { title, description, fileUri, imageUri });
-        if (!fileUri || !title || !description) {
+        console.log("Submitting with: ", { title, description, genre, fileUri, imageUri });
+        if (!fileUri || !title || !description || !genre) {
             Alert.alert('Error', 'All fields are required');
             return;
         }
@@ -115,6 +125,7 @@ function SubmissionScreen({ navigation }) {
                 userId,
                 title,
                 description,
+                genre,
                 fileUrl,
                 coverUrl: imageUrl,
                 votes: 0,  // Initialize votes count to 0
@@ -132,6 +143,14 @@ function SubmissionScreen({ navigation }) {
         }
     };
 
+    const genreTypeData = [
+        { key: 1, label: 'House' },
+        { key: 2, label: 'R&B' },
+        { key: 3, label: 'Club' },
+        { key: 4, label: 'Hip-Hop' },
+        { key: 5, label: 'Rap' }
+    ];
+
     return (
         <View style={styles.container}>
             <TextInput
@@ -140,12 +159,31 @@ function SubmissionScreen({ navigation }) {
                 value={title}
                 onChangeText={setTitle}
             />
+
             <TextInput
                 style={styles.input}
                 placeholder="Description"
                 value={description}
                 onChangeText={setDescription}
             />
+
+            {/* <Text style={styles.inputText}>User Type</Text> */}
+            <ModalSelector
+                data={genreTypeData}
+                initValue="Select Genre"
+                onChange={(option) => setGenre(option.label)}
+            // style={styles.pickerContainer}
+            // style={{ padding: 10, backgroundColor: '#E4DED6', width: 350, height: 45, borderRadius: 12, fontSize: 16, marginTop: 20 }}
+            >
+                <TextInput
+                    // style={{ borderWidth: 1, borderColor: '#ccc', padding: 10, height: 45, backgroundColor: '#E4DED6' }}
+                    style={{ padding: 10, backgroundColor: '#E4DED6', width: 350, height: 45, borderRadius: 12, fontSize: 16, marginTop: 20 }}
+                    editable={false}
+                    placeholder="Select Genre"
+                    value={genre}
+                />
+            </ModalSelector>
+
             <Button title="Pick a remix" onPress={pickFile} />
             {fileUri ? <Text>File selected: {fileUri.split('/').pop()}</Text> : <Text>No file selected.</Text>}
 
@@ -179,6 +217,18 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 350,
         marginVertical: 10
+    },
+    pickerContainer: {
+        backgroundColor: '#E4DED6',
+        borderRadius: 12,
+        width: 350,
+        height: 45,
+        justifyContent: 'center',
+        marginBottom: 20,
+    },
+    pickerText: {
+        padding: 10,
+        fontSize: 16,
     },
 });
 
