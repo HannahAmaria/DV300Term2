@@ -43,7 +43,16 @@ const WinnersStack = () => (
     <Stack.Screen
       name="WinnersScreen"
       component={WinnersScreen}
-      options={{ title: 'Winner' }}
+      options={{
+        title: 'Winners',
+        headerStyle: {
+          backgroundColor: '#E15A19',
+        },
+        headerTintColor: 'white',  // Set back button and back text color to white
+        headerTitleStyle: {
+          color: 'white',  // Set header title color to white
+        },
+      }}
     />
   </Stack.Navigator>
 );

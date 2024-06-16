@@ -7,7 +7,7 @@
     "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/synk_splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#F6EEE3"
     },
@@ -28,3 +28,4 @@
     }
   }
 }
+  

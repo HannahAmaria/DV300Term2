@@ -15,6 +15,7 @@ const WinnersScreen = () => {
     const firestore = getFirestore();
     const route = useRoute();
     const fadeAnim = useRef(new Animated.Value(0)).current;
+    const flatListRef = useRef(null);
 
     useEffect(() => {
         if (route.params && route.params.highlightSubmissionId) {
@@ -79,6 +80,15 @@ const WinnersScreen = () => {
         return sound ? () => { sound.unloadAsync(); } : undefined;
     }, []);
 
+    useEffect(() => {
+        if (highlightSubmissionId && winners.length > 0) {
+            const index = winners.findIndex(winner => winner.id === highlightSubmissionId);
+            if (index !== -1 && flatListRef.current) {
+                flatListRef.current.scrollToIndex({ index, animated: true });
+            }
+        }
+    }, [highlightSubmissionId, winners]);
+
     const handlePlayPause = async (index, fileUrl) => {
         try {
             setLoadingAudioIndex(index);
@@ -136,6 +146,7 @@ const WinnersScreen = () => {
                         data={winners}
                         keyExtractor={(item) => item.id}
                         renderItem={renderWinner}
+                        ref={flatListRef}
                     />
                 </>
             )}
@@ -147,7 +158,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        marginTop: 100,
     },
     card: {
         padding: 15,
@@ -157,8 +167,8 @@ const styles = StyleSheet.create({
         elevation: 2,
     },
     highlightCard: {
-        borderColor: 'gold',
-        borderWidth: 2,
+        borderColor: '#E15A19',
+        borderWidth: 5,
     },
     cardText: {
         fontSize: 18,

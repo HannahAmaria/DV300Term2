@@ -130,7 +130,7 @@ export default function HomeScreen({ navigation }) {
                         data={competitions}
                         keyExtractor={(item) => item.id}
                         renderItem={renderCompetition}
-                        style={styles.flatlist_style}
+                        contentContainerStyle={styles.flatlistContentContainer}
                     />
                 )}
             </View>
@@ -144,18 +144,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     titleContainer: {
-        paddingTop: 25,
+        flex: 1,
+        paddingTop: 15,
         alignItems: 'center',
         textAlign: 'center',
     },
     header: {
         fontSize: 64,
         padding: 20,
-        paddingTop: 45,
+        // paddingTop: 45,
     },
-    flatlist_style: {
-        width: '100%',
-        height: '100%',
+    flatlistContentContainer: {
+        alignItems: 'center',
+        paddingVertical: 20,
     },
     card: {
         height: 130,

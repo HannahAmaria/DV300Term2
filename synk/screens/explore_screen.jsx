@@ -232,10 +232,11 @@ const styles = StyleSheet.create({
     },
     flatlist_style: { flex: 1 },
     inputText: {
-        fontSize: 24,
+        fontSize: 30,
         fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: 20,
+        color: '#E15A19',
     },
 });
 
