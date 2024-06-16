@@ -4,9 +4,7 @@
 <h6 align="center">DV300 Term 2</h6>
 </br>
 <p align="center">
-  
   <h3 align="center">SynK</h3>
-
   <p align="center">
     Mobile Remix Competition App <br>
    <br />
