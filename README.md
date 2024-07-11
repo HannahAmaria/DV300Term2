@@ -111,21 +111,25 @@ Launch Expo by running:
 ### Authentication
 
 User is able to create an account/profile so that they can log on to and out of the app as a normal user or judge.
+
 ![Authentication](synk/assets/images/Authentication.jpeg)
 
 ### Competition
 
 User is able to view, enter and compete in the competition. 
+
 ![Competition](synk/assets/images/Competition.jpeg)
 
 ### Voting
 
 User is able to log on and add the results to each entry.
+
 ![Voting](synk/assets/images/Voting.jpeg)
 
 ### Result
 
 The user should be able to view the results of the competition.
+
 ![Result](synk/assets/images/Result.jpeg)
 
 <!-- CONCEPT PROCESS -->
