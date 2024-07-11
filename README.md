@@ -1,20 +1,21 @@
 <!-- HEADER SECTION -->
 <h5 align="center" style="padding:0;margin:0;">Hannah Naidoo</h5>
 <h5 align="center" style="padding:0;margin:0;">21100366</h5>
-<h6 align="center">DV300 Term 2</h6>
-</br>
+<h6 align="center">Interactive Development 300</h6>
 <p align="center">
-  
+
   <h3 align="center">SynK</h3>
-  
+
   <p align="center">
-    Mobile Remix Competition App <br>
+    DJ Remix Competition <br>
+      <a href="https://github.com/HannahAmaria/DV300Term2/issues"><strong>Explore the docs »</strong></a>
    <br />
-   <a href="path/to/demonstration/video">View Demo</a>
+   <br />
+   <a href="https://drive.google.com/file/d/1jQEfhWcnwQMBhT9PAWrn_JWwpCxSVKzn/view?usp=sharing">View Demo</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Report Bug</a>
+    <a href="https://github.com/HannahAmaria/DV300Term2/issues">Report Bug</a>
     ·
-    <a href="https://github.com/username/projectname/issues">Request Feature</a>
+    <a href="https://github.com/HannahAmaria/DV300Term2/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -34,15 +35,11 @@
    * [Implementation Process](#implementation-process)
         * [Highlights](#highlights)
         * [Challenges](#challenges)
-   * [Reviews and Testing](#peer-reviews)
-        * [Feedback from Reviews](#feedback-from-reviews)
-        * [Unit Tests](#unit-tests)
    * [Future Implementation](#peer-reviews)
 * [Final Outcome](#final-outcome)
     * [Mockups](#mockups)
     * [Video Demonstration](#video-demonstration)
 * [Conclusion](#conclusion)
-* [Roadmap](#roadmap)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -51,27 +48,27 @@
 <!--PROJECT DESCRIPTION-->
 ## About the Project
 <!-- header image of project -->
-![image1][image1]
+![Mockup1](synk/assets/images/Mockup1.jpg)
 
 ### Project Description
 
-A nice introduction to this amazing project of mine.
+Created a cross-platform mobile application using React Native and Google Firebase. The app allows multiple users to sign in and enter a remix competition. Users can enter a competition see their progress and vote.
 
 ### Built With
 
-* [React Native](path/to/technology/website)
-* [Firebase](path/to/technology/website)
-* [Expo](path/to/technology/website)
+* [React Native](https://reactnative.dev/)
+* [Google Firebase](https://firebase.google.com/)
+* [Expo Go](https://expo.dev/go)
 
 <!-- GETTING STARTED -->
-<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
+<!-- Make sure to add appropriate information about what prerequisite technologies the user would need and also the steps to install your project on their own machines -->
 ## Getting Started
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-Ensure that you have the latest version of [Software](path/to/where/they/can/download/software) installed on your machine. The [Plugin](path/to/where/they/can/download/plugin) plugin will also be required.
+Ensure that you have the latest version of [React Native](https://reactnative.dev/) installed on your machine. 
 
 ### How to install
 
@@ -79,25 +76,32 @@ Ensure that you have the latest version of [Software](path/to/where/they/can/dow
 Here are a couple of ways to clone this repo:
 
 1. Software </br>
-`Android Studio` -> `File` -> `New` -> `From Version Control` -> `Git`</br>
-Enter `https://github.com/username/projectname.git` into the URL field and press the `Clone` button.
+`GitHub Desktop` -> `File` -> `Clone repository` -> `URL`</br>
+Enter `https://github.com/HannahAmaria/DV300Term2.git` into the URL field and press the `Clone` button.
 
 2. Clone Repository </br>
 Run the following in the command-line to clone the project:
    ```sh
    git clone https://github.com/HannahAmaria/DV300Term2.git
    ```
-    Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
+    Open `GitHub Desktop` and select `File | Open...` from the menu. Select cloned directory and press `Open in Visual Studio Code` button
 
-3. Install Dependencies </br>
-Run the following in the command-line to install all the required dependencies:
+3. Navigate to Project Directory </br>
+Change directory to the project folder:
+   ```sh
+   cd synk
+   ```
+
+4. Install Dependencies </br>
+Run the following command to install necessary dependencies:
    ```sh
    npm install
    ```
 
-4. Get a free API Key at [https://example.com](https://example.com) and enter it in the `config.js` file:
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+5. Start Expo </br>
+Launch Expo by running:
+   ```sh
+   npm start
    ```
 
 
@@ -105,23 +109,25 @@ Run the following in the command-line to install all the required dependencies:
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
-![image2][image2]
-### Feature 1
+![Authentication](synk/assets/images/Authentication.jpeg)
+### Authentication
 
-Description of Feature
+User is able to create an account/profile so that they can log on to and out of the app as a normal user or judge.
 
-![image3][image3]
-### Feature 2
+![Competition](synk/assets/images/Competition.jpeg)
+### Competition
 
-Description of Feature
+User is able to view, enter and compete in the competition. 
 
-![image4][image4]
-### Feature 3
+![Voting](synk/assets/images/Voting.jpeg)
+### Voting
 
-Description of Feature
+User is able to log on and add the results to each entry.
 
-![image5][image5]
+![Result](synk/assets/images/Result.jpeg)
+### Result
 
+The user should be able to view the results of the competition.
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -131,17 +137,11 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-![image5][image5]
-<br>
-![image6][image6]
+![Moodboard](synk/assets/images/Moodboard.jpg)
 
 ### Wireframes
 
-![image7][image7]
-
-### User-flow
-
-![image8][image8]
+![Wireframe1](synk/assets/images/Wireframe1.png)![Wireframe2](synk/assets/images/Wireframe2.png)![Wireframe3](synk/assets/images/Wireframe3.png)![Wireframe4](synk/assets/images/Wireframe4.png)![Wireframe5](synk/assets/images/Wireframe5.png)![Wireframe6](synk/assets/images/Wireframe6.png)
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -151,64 +151,38 @@ The `Development Process` is the technical implementations and functionality don
 ### Implementation Process
 <!-- stipulate all of the functionality you included in the project -->
 
-* Made use of both `functionality` to implement a specific feature.
-* `MVC/MVVM` design architecture implemented.
-* `Plugin` for this.
-* ETC.
+* Made use of both `React Native` and `Google Firebase` to create a cross-platform mobile remix competition application. 
+* Made use of `YouTube` to create audio files and remix covers. 
 
 #### Highlights
 <!-- stipulated the highlight you experienced with the project -->
-* Sunshine.
-* Rainbows.
+* Achieved 95% project completion.
+* Implemented a simple and straightforward design.
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
-
-### Reviews & Testing
-<!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
-
-#### Feedback from Reviews
-
-`Peer Reviews` were conducted by my fellow students and lecturer. The following feedback I found useful:
-
-* Feedback one.
-* Feedback two.
-
-#### Unit Tests
-
-`Unit Tests` were conducted to establish working functionality. Here are all the tests that were ran:
-
-* Test 1 of this functionality
-* Test 2 of this functionality
+* Difficulty integrating audio files.
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* Future 1.
-* Future 2.
+* Enhance the design.
 
 <!-- MOCKUPS -->
 ## Final Outcome
 
 ### Mockups
 
-![image9][image9]
+![Mockup2](synk/assets/images/Mockup2.jpg)
 <br>
-![image10][image10]
+![Mockup3](synk/assets/images/Mockup3.jpg)
 
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
 
 To see a run through of the application, click below:
 
-[View Demonstration](path/to/video/demonstration)
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/username/projectname/issues) for a list of proposed features (and known issues).
+[View Demonstration](https://drive.google.com/file/d/1hrXlPQm_waY5H67_-hV0N54cOaK6-GcC/view?usp=sharing)
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -216,15 +190,15 @@ See the [open issues](https://github.com/username/projectname/issues) for a list
 Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/SynK`)
+3. Commit your Changes (`git commit -m 'Add some SynK'`)
+4. Push to the Branch (`git push origin feature/SynK`)
 5. Open a Pull Request
 
 <!-- AUTHORS -->
 ## Authors
 
-* **Hannah Naidoo** - [username](https://github.com/HannahAmaria)
+* **Hannah Naidoo** - [HannahAmaria](https://github.com/HannahAmaria)
 
 <!-- LICENSE -->
 ## License
@@ -234,19 +208,15 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Hannah Naidoo** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
+* **Hannah Naidoo** - [21100366@virtualwindow.co.za](21100366@virtualwindow.co.za)
 * **Project Link** - https://github.com/HannahAmaria/DV300Term2
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 <!-- all resources that you used and Acknowledgements here -->
-* [DJ Discretion - 2000's R&B Remix](path/to/resource)
-* [DJ Discretion - R&B Jams](path/to/resource)
-* [DJ Discretion - Hip-Hop R&B Hits](path/to/resource)
-* [DJ Discretion - Women of R&B Remix](path/to/resource)
-* [DJ Discretion - Club Hits](path/to/resource)
-* [DJ Discretion - House Party Hits](path/to/resource)
-
+* [React Native](https://reactnative.dev/)
+* [ChatGPT](https://chatgpt.com/)
+* [DJ Discretion](https://www.youtube.com/channel/UCYck6zY3HFdXbfYAttthKzw)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [image1]: /path/to/image.png
