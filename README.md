@@ -30,7 +30,6 @@
 * [Concept Process](#concept-process)
    * [Ideation](#ideation)
    * [Wireframes](#wireframes)
-   * [User-flow](#user-flow)
 * [Development Process](#development-process)
    * [Implementation Process](#implementation-process)
         * [Highlights](#highlights)
@@ -109,25 +108,25 @@ Launch Expo by running:
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
-![Authentication](synk/assets/images/Authentication.jpeg)
 ### Authentication
 
 User is able to create an account/profile so that they can log on to and out of the app as a normal user or judge.
+![Authentication](synk/assets/images/Authentication.jpeg)
 
-![Competition](synk/assets/images/Competition.jpeg)
 ### Competition
 
 User is able to view, enter and compete in the competition. 
+![Competition](synk/assets/images/Competition.jpeg)
 
-![Voting](synk/assets/images/Voting.jpeg)
 ### Voting
 
 User is able to log on and add the results to each entry.
+![Voting](synk/assets/images/Voting.jpeg)
 
-![Result](synk/assets/images/Result.jpeg)
 ### Result
 
 The user should be able to view the results of the competition.
+![Result](synk/assets/images/Result.jpeg)
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
